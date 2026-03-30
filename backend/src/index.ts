@@ -27,6 +27,10 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'ok', service: 'MonadicPlanner', port: PORT });
 });
 
+app.get('/api/health', (_req, res) => {
+  res.json({ status: 'ok', service: 'planner', timestamp: new Date().toISOString() });
+});
+
 app.listen(PORT, () => {
   console.log(`MonadicPlanner backend running on http://localhost:${PORT}`);
 });
